@@ -12,6 +12,8 @@ html, body {
     height: 100%;
     zoom: 0.85;
     cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym49.cur'), auto; 
+    min-width: 1920px; /* Должно совпадать с числом в viewport */
+    overflow-x: auto;  /* Позволит скроллить вбок, если что-то не влезет */
 }
 
 .page-wrapper {
@@ -27,15 +29,12 @@ html, body {
 .main-column {
     position: relative;
     background: rgba(0, 0, 0, 0.94);
-    width: 1200px;
-    padding: 50px 20px 20px;
+    width: 100%; /* Занимает всю ширину по умолчанию */
+    max-width: 1200px; /* Но не больше 1200px */
+    padding: 20px;
     box-sizing: border-box;
-    border-left: 5px solid #222;
-    border-right: 5px solid #222;
-    box-shadow: 0 0 100px #000;
+    margin: 0 auto;
     z-index: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 .main-column::before {
@@ -119,15 +118,7 @@ html, body {
     word-break: break-all;
 }
 
-.wiki-img {
-    float: right;
-    width: 300px;
-    height: auto;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    border: 3px solid red;
-    image-rendering: pixelated;
-}
+
 
 .roses-group {
     position: fixed;
@@ -194,9 +185,6 @@ html, body {
 .side-gallery img {
     width: 100%;
     border: 1px solid #222;
-    /* transition ОБЯЗАТЕЛЕН для плавности возврата */
-    transition: transform 0.4s ease-out; 
-    will-change: transform;
 }
 
 .left-side { left: calc(50% - 920px); }
